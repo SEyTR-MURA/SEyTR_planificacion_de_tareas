@@ -1,0 +1,16 @@
+# Valores de partida del proyecto. Este fichero se escribe a mano y se versiona;
+# sdkconfig lo genera la herramienta y no se versiona.
+
+# Sin esto, el destino de compilacion por omision no es el de la asignatura.
+CONFIG_IDF_TARGET="esp32s3"
+
+# Frecuencia del tick del planificador. A 1000 Hz el tick dura 1 ms. Es la
+# frecuencia de todos los proyectos de la asignatura. En U3-S5 se cambia a
+# 100 Hz para ver que depende del tick y que no.
+CONFIG_FREERTOS_HZ=1000
+
+# La tarea de servicio de los temporizadores software se fija al nucleo 0, el
+# de las tareas de la prueba y el de la tarea de esp_timer. Por omision se crea
+# sin afinidad y se ejecutaria en el nucleo 1, que esta casi libre, y la carga
+# de la variante de temporizadores no la retrasaria.
+CONFIG_FREERTOS_TIMER_TASK_AFFINITY_CPU0=y

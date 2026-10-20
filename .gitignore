@@ -1,0 +1,11 @@
+# Lo que genera la herramienta no se versiona.
+build/
+sdkconfig
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# Entorno del editor
+.vscode/
+.devcontainer/
+.clangd
